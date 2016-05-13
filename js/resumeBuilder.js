@@ -92,10 +92,9 @@ var projects = {
 ;
 if(bio.skills!=="")
 {
-$("#header").append(HTMLskillsStart);
-for(var i=0;i<(bio["skills"]).length; i++)
-  {
-   $("#skills").append(bio.skills[i]);
-   console.log(bio.skills[i]);
-  } 
+  $("#header").append(HTMLskillsStart);
+  for(var i=0;i<(bio["skills"]).length; i++)
+    {
+     $("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
+    } 
 }

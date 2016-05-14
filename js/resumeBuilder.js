@@ -2,18 +2,35 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 //Define Bio
-var bio = {
-  "name": "Vaishnavi Iyer",
-  "role" : "Web Developer",
-  "contacts" : {
-    "mobileNum" : "0220644925",
-    "email" :"iyervaishnavi26@gmail.com",
-    "github":"vaishnavi-iyer"
-  },
-  "picUrl" : "../images/me.jpg",
-  "welcomeMessage": "Hi! I am Vaishnavi",
-  "skills":["HTML","CSS","JavaScript","Software Design"]
-}
+
+var bio = 
+{
+    "name": "Vaishnavi Iyer",
+    "role" : "Web Developer",
+    "contacts" : {
+        "mobile" : "0220644925",
+        "email" :"iyervaishnavi26@gmail.com",
+        "github":"vaishnavi-iyer",
+        "location":"Wellington"
+    },
+    "picUrl" : "images/me.jpg",
+    "welcomeMessage": "Hi! I am Vaishnavi",
+    "skills":["HTML","CSS","JavaScript","Software Design"]
+  }
+
+//display bio
+$("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
+$("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
+
+//$("#topContacts").append(HTMLcontactGeneric.replace("%data%",bio.contacts));
+$("#topContacts").append(HTMLmobile.replace("%data%",bio.contacts.mobile));
+$("#topContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
+$("#topContacts").append(HTMLgithub.replace("%data%",bio.contacts.github));
+$("#topContacts").append(HTMLlocation.replace("%data%",bio.contacts.location));
+
+$("#header").append(HTMLbioPic.replace("%data%",bio.picUrl));
+$("#header").append(HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage));
+
 var work = {
   "jobs":[
     {
@@ -42,7 +59,7 @@ var education = {
       "degree":"Secondary School",
       "majors": ["Science","bio","math"],
       "dates":"2007",
-      "url":"bhavans.com"
+      "url":"google.com"
     },
     {
       "name":"Babaria",
@@ -50,7 +67,7 @@ var education = {
       "degree":"Engineering",
       "majors": ["E&C","OS"],
       "dates":"2011",
-      "url":"bitseducamp.com"
+      "url":"google.com"
     }
   ],
   "onlineCourses":[
@@ -136,8 +153,7 @@ projects.display = function() {
   }
 }
 
-$("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
+
 displayWork();
 projects.display();
 
